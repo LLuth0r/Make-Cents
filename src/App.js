@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Route } from 'react-router-dom';
+import { baseURL, config } from './services'
+import Home from './components/Home';
+import DollarSaved from './components/DollarSaved'
 
 function App() {
+
+  const [dollarSaved, setDollarSaved] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
+
+
+  useEffect(() => {
+    async function getDollars() {
+      let response = await axios.get(baseURL, config);
+      setDollarSaved(response.data.records);
+      console.log(response);
+    }
+    getDollars();
+  }, [toggleFetch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route exact path='/'>
+      <Home />
+      </Route>
+      <Route path='/DollarSaved'>
+        <DollarSaved /> 
+      </Route>
     </div>
   );
 }
