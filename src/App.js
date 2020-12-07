@@ -21,16 +21,17 @@ function App() {
     }
     getDollars();
   }, [toggleFetch]);
+  // console.log(dollars);
 
   return (
     <div className="App">
         <Route path='/DollarSaved/:id'>
-        {dollars.map((dollar) => (
-        <DollarSaved dollars={dollars} setToggleFetch={setToggleFetch}/> 
-        ))}        
+        {dollars.map((dollar) => {
+          return <DollarSaved dollars={dollars} setToggleFetch={setToggleFetch} />
+        })}        
       </Route>
       <Route exact path='/'>
-      <Home />
+        <Home dollars={dollars}/>
       </Route>
     </div>
   );

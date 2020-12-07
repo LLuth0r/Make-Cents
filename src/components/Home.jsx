@@ -3,13 +3,13 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
-  console.log(props);
-  if (props.dollars) {
+  // console.log(props.dollars);
+  if (props.dollars.length>0) {
     return (
       <div className="navbar">
         <h1 className="app-title">Make Cent$</h1>
         <div className="Dollars">
-          <Link to={`/DollarSaved/${props.dollars}`} >
+          <Link to={`/DollarSaved/${props.dollars[0].id}`} >
             <div>
               <img className="dollaricon" src="https://res.cloudinary.com/decd84s0g/image/upload/v1607221870/Make%20Cents/bank.png" />
             </div>
@@ -32,6 +32,6 @@ export default function Navbar(props) {
       </div>
     )
   } else {
-    return <div><h1>Focker</h1></div>
+    return <div></div>
   }
 }
