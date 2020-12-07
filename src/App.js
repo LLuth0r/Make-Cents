@@ -9,26 +9,28 @@ import DollarSaved from './components/DollarSaved'
 
 function App() {
 
-  const [dollarSaved, setDollarSaved] = useState([]);
+  const [dollars, setDollars] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
 
 
   useEffect(() => {
     async function getDollars() {
       let response = await axios.get(baseURL, config);
-      setDollarSaved(response.data.records);
-      console.log(response);
+      setDollars(response.data.records);
+      // console.log(response);
     }
     getDollars();
   }, [toggleFetch]);
 
   return (
     <div className="App">
+        <Route path='/DollarSaved/:id'>
+        {dollars.map((dollar) => (
+        <DollarSaved dollars={dollars} setToggleFetch={setToggleFetch}/> 
+        ))}        
+      </Route>
       <Route exact path='/'>
       <Home />
-      </Route>
-      <Route path='/DollarSaved'>
-        <DollarSaved /> 
       </Route>
     </div>
   );
