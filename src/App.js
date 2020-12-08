@@ -5,11 +5,14 @@ import { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import { baseURL, config } from './services'
 import Home from './components/Home';
-import DollarSaved from './components/DollarSaved'
+import DollarSaved from './components/DollarSaved';
+import BudgetForm from './components/BudgetForm';
+
 
 function App() {
 
   const [dollars, setDollars] = useState([]);
+  const [expenses, setExpenses] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
 
 
@@ -32,6 +35,9 @@ function App() {
       </Route>
       <Route exact path='/'>
         <Home dollars={dollars}/>
+      </Route>
+      <Route exact path='/BudgetForm'>
+        <BudgetForm expenses={expenses}/>
       </Route>
     </div>
   );

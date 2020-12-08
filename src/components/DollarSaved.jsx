@@ -30,7 +30,7 @@ class DollarSaved extends Component {
   async submitYears() {
     
     const resp = await axios.post(baseURL, { fields: { number_of_years: this.state.years } }, config );
-    this.props.setToggleFetch((prev) => !prev);
+    // this.props.setToggleFetch((prev) => !prev);
     console.log(resp)
   }
 
@@ -57,8 +57,12 @@ class DollarSaved extends Component {
 
   drawChart() {
     // console.log(this.state.saved);
-    const data = [];
-    data.push(parseInt(this.state.saved.total));
+    const data = parseInt(this.state.saved.number_of_years);
+    console.log(data);
+    // data.push(parseInt(this.state.saved.number_of_years));
+    const dollarsPerYear = 365;
+    const total = (data * dollarsPerYear);
+    console.log(total);
     const h = 500;
     const w = 400;
     // console.log(data);
@@ -69,7 +73,7 @@ class DollarSaved extends Component {
       .style('margin-left', 100);
     
     svg.selectAll('rect')
-      .data(data)
+      .data(total)
       .enter()
       .append('rect')
       .attr('x', (d, i) => i * 70)
