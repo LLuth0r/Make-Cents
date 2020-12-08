@@ -25,7 +25,7 @@ export default function Home(props) {
         </p>
           <h2>Time Traveler$</h2>
           <div className="Vacation">
-            <Link to={`/BudgetForm/`} >
+            <Link to={`/Form/`} >
             <div>
               <img className="dollaricon" src="https://res.cloudinary.com/decd84s0g/image/upload/v1607221870/Make%20Cents/bank.png" />
             </div>

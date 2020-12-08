@@ -7,7 +7,7 @@ import { baseURL, config } from './services'
 import Home from './components/Home';
 import DollarSaved from './components/DollarSaved';
 import BudgetForm from './components/BudgetForm';
-
+import AddExpense from './components/AddExpense';
 
 function App() {
 
@@ -36,8 +36,8 @@ function App() {
       <Route exact path='/'>
         <Home dollars={dollars}/>
       </Route>
-      <Route exact path='/BudgetForm'>
-        <BudgetForm expenses={expenses}/>
+      <Route exact path='/Form'>
+        <AddExpense expenses={expenses}/>
       </Route>
     </div>
   );

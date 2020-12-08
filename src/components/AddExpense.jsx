@@ -4,7 +4,7 @@ import { budgetURL, config } from '../services';
 import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 
-const addExpense = (props) => {
+const AddExpense = (props) => {
   const [item, setItem] = useState('');
   const [cost, setCost] = useState('');
   const [income, setIncome] = useState('');
@@ -21,7 +21,7 @@ const addExpense = (props) => {
     await axios.post(budgetURL, { fields: data }, config);
     props.setToggleFetch((prev) => !prev);
     history.push('/');
-}
+  };
 
   return (
     <div>
@@ -60,12 +60,12 @@ const addExpense = (props) => {
             setCost(e.target.value);
           }}
         />
-        <button className='button' type='submit'>Add</button>
-          <button className='button'>Delete</button>
+        {/* <button className='button' type='submit'>Add</button>
+          <button className='button'>Delete</button> */}
           </div>
       </form>
     </div>
   )
 }
   
-export default addExpense;
+export default AddExpense;
