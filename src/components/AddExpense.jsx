@@ -14,7 +14,7 @@ const AddExpense = (props) => {
     e.preventDefault();
     let data = {
       item,
-      cost,
+      expense_cost: cost,
       income,
     };
 

@@ -17,8 +17,6 @@ class DollarSaved extends Component {
     this.drawChart = this.drawChart.bind(this);
   }
   
-
-
   async fetchDollars() {
     const resp = await axios.get(`${baseURL}/${this.state.savedId}`, config);
     console.log(resp.data);
