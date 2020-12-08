@@ -3,10 +3,11 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
-import { baseURL, config } from './services'
+import { baseURL, budgetURL, config } from './services'
 import Home from './components/Home';
 import DollarSaved from './components/DollarSaved';
 import AddExpense from './components/AddExpense';
+import BudgetTable from './components/BudgetTable'
 
 function App() {
 
@@ -23,25 +24,36 @@ function App() {
     }
     getDollars();
   }, [toggleFetch]);
-  // console.log(dollars);
-  console.log(dollars);
+
+  useEffect(() => {
+    async function getBudget() {
+      let resp = await axios.get(budgetURL, config);
+      setExpenses(resp.data.records);
+      console.log(resp);
+    }
+    getBudget();
+  }, [toggleFetch]);
+
   return (
     <div className="App">
-        <Route path='/DollarSaved/:id'>
+
+      <Route exact path='/'>
+        <Home dollars={dollars}/>
+      </Route>      
+
+      <Route path='/DollarSaved/:id'>
         {dollars.map((dollar) => {
           return <DollarSaved dollars={dollars} setToggleFetch={setToggleFetch} />
         })}        
       </Route>
 
-      <Route exact path='/'>
-        <Home dollars={dollars}/>
+      <Route path='/Budget/'>
+       
+        <><AddExpense expenses={expenses} setToggleFetch={setToggleFetch} />
+          {expenses.map((expense)=><BudgetTable expense={expense}/>)}
+          </>                       
       </Route>
 
-      <Route path='/AddExpense/'>
-        {expenses.map((expense) => {
-          return <AddExpense expenses={expenses} setToggleFetch={setToggleFetch}/>
-        })}        
-      </Route>
     </div>
   );
 }

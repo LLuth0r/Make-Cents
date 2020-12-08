@@ -1,8 +1,8 @@
-
 import axios from 'axios';
 import { budgetURL, config } from '../services';
 import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
+import BudgetTable from './BudgetTable';
 
 const AddExpense = (props) => {
   const [item, setItem] = useState('');
@@ -20,12 +20,12 @@ const AddExpense = (props) => {
 
     await axios.post(budgetURL, { fields: data }, config);
     props.setToggleFetch((prev) => !prev);
-    history.push('/');
-  };
-
+    
+};
+    
   return (
     <div>
-<h1 className="app-title">Vacation Fund$</h1>
+      <h1 className="app-title">Vacation Fund$</h1>
       <div className="Dollars"></div>
       <form onSubmit={handleSubmit}>
       <div className='income'> 

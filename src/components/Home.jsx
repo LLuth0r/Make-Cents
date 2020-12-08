@@ -24,7 +24,7 @@ export default function Home(props) {
         </div>
         
           <div className="Vacation">
-            <Link to={`/AddExpense/`} >
+            <Link to={`/Budget/`} >
             <div>
               <img className="dollaricon" src="https://res.cloudinary.com/decd84s0g/image/upload/v1607221870/Make%20Cents/bank.png" alt=''/>
             </div>
