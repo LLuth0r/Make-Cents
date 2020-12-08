@@ -14,16 +14,31 @@ class DollarSaved extends Component {
       rendered: false,
       years:0,
     }
-
     this.drawChart = this.drawChart.bind(this);
   }
   
+
+
   async fetchDollars() {
     const resp = await axios.get(`${baseURL}/${this.state.savedId}`, config);
     console.log(resp.data);
     this.setState({ saved: resp.data.fields });
     this.props.setToggleFetch((prev)=>!prev)
     // console.log(this.state.saved)
+  }
+
+  async submitYears() {
+    
+    const resp = await axios.post(baseURL, { fields: { number_of_years: this.state.years } }, config );
+    this.props.setToggleFetch((prev) => !prev);
+    console.log(resp)
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // const data = {
+    //   years,
+   this.submitYears()
   }
 
   componentDidMount() {
@@ -38,7 +53,6 @@ class DollarSaved extends Component {
     }
     // console.log('hi');
   }
-
 
 
   drawChart() {
@@ -74,19 +88,23 @@ class DollarSaved extends Component {
     // console.log('hello');
     return (
       <div className="dollarSaved">
-        {/* <form onSubmit={handleSubmit}>
-          <input
+        
+        <h1 className="penniesTitle">100 Pennies Make Cent$</h1>
+        <div>
+        <form onSubmit={this.handleSubmit}>
+            <input 
             type='number'
             name='years'
             value={this.state.years}
             onChange={(e) => {
-            this.setState.years(e.target.value)
+            this.setState({ years: Number(e.target.value) })
             }} />
           <input type='submit'/>
-        </form> */}
-        <h1 className="penniesTitle">100 Pennies Make Cent$</h1>
-        <div></div>
+        </form>
+        </div>
         <div className="dollarChart" id={'#' + this.props.id}></div>
+        <button className='addYear'>+ Year</button>
+        <button className='minusYear'>- Year</button>
         <h3>Total $aved</h3>
         </div>
     );
