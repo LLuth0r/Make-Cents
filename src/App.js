@@ -8,7 +8,7 @@ import Home from './components/Home';
 import DollarSaved from './components/DollarSaved';
 import AddExpense from './components/AddExpense';
 import BudgetTable from './components/BudgetTable';
-import AddIncome from './components/AddIncome';
+
 
 function App() {
 
@@ -61,7 +61,6 @@ function App() {
       <Route path='/Budget/'>
         <>
           <AddExpense expenses={expenses} setToggleFetch={setToggleFetch} />
-          <AddIncome income={income} setToggleFetch={setToggleFetch} />
           {expenses.map((expense) => <BudgetTable expense={expense} />)}
         </>                       
       </Route>

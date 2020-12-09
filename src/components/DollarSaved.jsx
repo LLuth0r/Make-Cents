@@ -52,7 +52,6 @@ class DollarSaved extends Component {
     // console.log('hi');
   }
 
-
   drawChart() {
     // console.log(this.state.saved);
     const data = parseInt(this.state.saved.number_of_years);
@@ -82,9 +81,6 @@ class DollarSaved extends Component {
     
     this.setState({rendered: true})
   }
-
-  
-
 
   render() {
     // console.log('hello');

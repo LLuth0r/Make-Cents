@@ -1,27 +1,47 @@
 import axios from 'axios';
-import { budgetURL, config } from '../services';
+import { budgetURL, incomeURL, config } from '../services';
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const AddExpense = (props) => {
   const [item, setItem] = useState('');
   const [cost, setCost] = useState('');
+  const [income, setIncome] = useState('');
+  const params = useParams();
+  console.log(params);
 
   async function handleSubmit(e) {
     e.preventDefault();
     let data = {
       item,
       expense_cost: cost,
+      income,
     };
+  
+    await axios.post(incomeURL, { fields: data }, config);
+    props.setToggleFetch((prev) => !prev);
 
     await axios.post(budgetURL, { fields: data }, config);
     props.setToggleFetch((prev) => !prev);
 };
     
   return (
-    <div>
+    <div className='add-budget-items'>
       <h1 className="app-title">Vacation Fund$</h1>
       <div className="Dollars"></div>
       <form onSubmit={handleSubmit}>
+        <div className='incomeForm'> 
+      <label htmlFor='income'>Income</label>
+        <input
+          type='number'
+          name='income'
+          value={income}
+          onChange={(e) => {
+            setIncome(e.target.value);
+          }}
+        />
+          <button className='button' type='submit'>Add</button>
+          </div>
         <div className='expenseform'>
         <label htmlFor='expense'>Expense Item:</label>
         <input
@@ -34,15 +54,16 @@ const AddExpense = (props) => {
         />
         <label htmlFor='expenseCost'>Expense Cost:</label>
         <input
-          type='number'
-          name='expenseCost'
-          value={cost}
+          type="number"
+          name='expense_cost'
+            value={cost}
+            min="1"
+            max="20000"
           onChange={(e) => {
             setCost(e.target.value);
           }}
         />
         <button className='button' type='submit'>Add</button>
-          <button className='button'>Delete</button>
           </div>
       </form>
       <h2 className='expense-type'>Monthly Expense Item</h2>
