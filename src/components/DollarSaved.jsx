@@ -5,6 +5,7 @@ import { baseURL, config } from '../services';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 import DollarChart from './DollarChart';
+import { Link } from 'react-router-dom';
 
 class DollarSaved extends Component {
   constructor(props) {
@@ -61,7 +62,12 @@ class DollarSaved extends Component {
     render() {
       return (
         <div className="dollarSaved">
-         <h1 className="penniesTitle">100 Pennies Make Cent$</h1>
+          <div className='header'>
+           <Link to='/'>
+              <img className='cents-logo' src="https://res.cloudinary.com/decd84s0g/image/upload/v1607529656/Make%20Cents/vectorstock_22357186.png" />
+              </Link> 
+          <h1 className="app-title">100 Pennies Make Cent$</h1>
+          </div>
           <div>
             <form onSubmit={this.handleSubmit}>
               <input

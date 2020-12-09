@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './AddExpense.css';
 import ExpenseChart from './ExpenseChart';
+import { Link } from 'react-router-dom';
 
 const AddExpense = (props) => {
   const [item, setItem] = useState('');
@@ -32,7 +33,12 @@ const AddExpense = (props) => {
   
   return (
     <div className='add-budget-items'>
-      <h1 className="app-title">Vacation Fund$</h1>
+      <div className='header'> 
+        <Link to='/'> 
+          <img className='cents-logo' src="https://res.cloudinary.com/decd84s0g/image/upload/v1607529656/Make%20Cents/vectorstock_22357186.png" />
+          </Link>
+          <h1 className="app-title">Vacation Fund$</h1>
+          </div>
       <form className='budget-form'>
         <div className='expenseform'>
         <label htmlFor='expense'>Income / Expense Item:</label>
