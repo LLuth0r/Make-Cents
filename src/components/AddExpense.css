@@ -1,0 +1,45 @@
+.budget-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.budget-headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.budget-table {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 30px;
+  margin-top: 10px;
+}
+
+.expense {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.expense-cost {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.update-button {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  width: 75px;
+  align-self: center;
+  justify-self: center;
+}
+
+.delete-button {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  width: 75px;
+}

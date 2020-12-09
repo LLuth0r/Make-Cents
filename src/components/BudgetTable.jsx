@@ -16,8 +16,8 @@ export default function BudgetTable(props) {
       <p className="expense">{props.expense.fields.item}</p>
       <p className="expense-cost">{props.expense.fields.expense_cost}</p>
       <p className="income">{props.expense.fields.income}</p>
-      <button className='button'>Update</button>
-      <button className='button' onClick={handleDelete}>Delete</button>
+      <button className='update-button'>Update</button>
+      <button className='delete-button' onClick={handleDelete}>Delete</button>
     </div>
   )
 }

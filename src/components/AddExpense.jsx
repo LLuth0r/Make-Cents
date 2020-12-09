@@ -2,6 +2,7 @@ import axios from 'axios';
 import { budgetURL, incomeURL, config } from '../services';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './AddExpense.css';
 
 const AddExpense = (props) => {
   const [item, setItem] = useState('');
@@ -28,8 +29,7 @@ const AddExpense = (props) => {
   return (
     <div className='add-budget-items'>
       <h1 className="app-title">Vacation Fund$</h1>
-      <div className="Dollars"></div>
-      <form onSubmit={handleSubmit}>
+      <form className='budget-form' onSubmit={handleSubmit}>
         <div className='incomeForm'> 
       <label htmlFor='income'>Income</label>
         <input
@@ -66,9 +66,11 @@ const AddExpense = (props) => {
         <button className='button' type='submit'>Add</button>
           </div>
       </form>
+      <div className='budget-headers'> 
       <h2 className='expense-type'>Monthly Expense Item</h2>
       <h2 className='expense-cost'>Expense Cost</h2>
-      <h2 className='income-header'>Monthly Income</h2>
+        <h2 className='income-header'>Monthly Income</h2>
+        </div>
     </div>
   )
 }
