@@ -1,7 +1,7 @@
 import React from 'react'
 import { budgetURL, config } from '../services';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
 
 export default function BudgetTable(props) {
 
@@ -12,10 +12,12 @@ export default function BudgetTable(props) {
   }
 
   return (
-    <div>
-      <p>{props.expense.fields.item}</p>
-      <p>{props.expense.fields.expense_cost}</p>
-      <p>{props.expense.fields.income}</p>     
+    <div className="budget-table">
+      <p className="expense">{props.expense.fields.item}</p>
+      <p className="expense-cost">{props.expense.fields.expense_cost}</p>
+      <p className="income">{props.expense.fields.income}</p>
+      <button className='button'>Update</button>
+      <button className='button' onClick={handleDelete}>Delete</button>
     </div>
   )
 }

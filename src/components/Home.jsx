@@ -35,6 +35,6 @@ export default function Home(props) {
       </div>
     )
   } else {
-    return <div><p> Focker </p></div>
+    return <div><p> This App Hates Me </p></div>
   }
 }

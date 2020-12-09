@@ -2,6 +2,8 @@ export const baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRT
 
 export const budgetURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/expenses`;
 
+export const incomeURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/income`;
+
 export const config = {
     headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
