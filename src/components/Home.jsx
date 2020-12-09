@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css';
+import './Header.css';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +11,10 @@ export default function Home(props) {
     
     return (
       <div className="navbar">
-        <h1 className="app-title">Make Cent$</h1>
+        <div className='header'> 
+        <img className='cents-logo' src="https://res.cloudinary.com/decd84s0g/image/upload/v1607529656/Make%20Cents/vectorstock_22357186.png" />
+          <h1 className="app-title">Make Cent$</h1>
+          </div>
         <div className="Dollars">
           <Link to={`/DollarSaved/${props.dollars[0].id}`} >
             <div>

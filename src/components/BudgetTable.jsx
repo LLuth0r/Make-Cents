@@ -5,9 +5,9 @@ import axios from 'axios';
 
 export default function BudgetTable(props) {
 
-  const handleDelete = async () => {
-    const fullURL = `${budgetURL}/${props.expense.id}`;
-    await axios.delete(fullURL, config);
+  const handleDelete = async() => {
+    const itemURL = `${budgetURL}/${props.expense.id}`;
+    await axios.delete(itemURL, config);
     props.setToggleFetch((prev) => !prev);
   }
 
