@@ -11,25 +11,34 @@ const AddExpense = (props) => {
   const params = useParams();
   console.log(params);
 
-  async function handleSubmit(e) {
+  async function handleExpenseSubmit(e) {
     e.preventDefault();
     let data = {
       item,
       expense_cost: cost,
-      income,
+      expense: true,
     };
   
-    await axios.post(incomeURL, { fields: data }, config);
-    props.setToggleFetch((prev) => !prev);
+   
 
     await axios.post(budgetURL, { fields: data }, config);
     props.setToggleFetch((prev) => !prev);
 };
     
+  async function handleIncomeSubmit(e) {
+    e.preventDefault();
+    let data = {
+      income,
+    };
+  
+    await axios.post(incomeURL, { fields: data }, config);
+    props.setToggleFetch((prev) => !prev);
+  };
+  
   return (
     <div className='add-budget-items'>
       <h1 className="app-title">Vacation Fund$</h1>
-      <form className='budget-form' onSubmit={handleSubmit}>
+      <form className='budget-form'>
         <div className='incomeForm'> 
       <label htmlFor='income'>Income</label>
         <input
@@ -40,7 +49,7 @@ const AddExpense = (props) => {
             setIncome(e.target.value);
           }}
         />
-          <button className='button' type='submit'>Add</button>
+          <button className='button' onClick={handleIncomeSubmit}>Add</button>
           </div>
         <div className='expenseform'>
         <label htmlFor='expense'>Expense Item:</label>
@@ -63,7 +72,7 @@ const AddExpense = (props) => {
             setCost(e.target.value);
           }}
         />
-        <button className='button' type='submit'>Add</button>
+        <button className='button' onClick={handleExpenseSubmit}>Add</button>
           </div>
       </form>
       <div className='budget-headers'> 
