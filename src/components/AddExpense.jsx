@@ -45,29 +45,11 @@ const AddExpense = (props) => {
           </div>
       <form className='budget-form'>
         <div className='expenseform'>
-          {/* <label htmlFor='expense'>Income / Expense Item:</label> */}
+         
           <TextField id="outlined-size-small" size="small" label="Income/Expense Item" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value) }}/>
-        {/* <input
-          type='text'
-          name='expense'
-          value={item}
-          onChange={(e) => {
-            setItem(e.target.value);
-          }}
-        /> */}
+       
           <TextField id="outlined-size-small" size="small" label="$Value" variant="outlined" value={cost} onChange={(e) => { setCost(e.target.value) }}/>
-        {/* <label htmlFor='expenseCost'>$Value:</label>
-        <input
-          type="number"
-          name='expense_cost'
-            value={cost}
-            min="1"
-            max="20000"
-          onChange={(e) => {
-            setCost(e.target.value);
-          }}
-          /> */}
-          {/* <label for="checkbox">Expense?</label> */}
+       
           <FormControlLabel
             control={
               <Checkbox
@@ -79,7 +61,7 @@ const AddExpense = (props) => {
             }
             label="Expense?"
           />
-          {/* <input type="checkbox" id="checkbox" name="checkbox" value={expense} onChange={e=>(handleCheckBox(e))}/> */}
+         
           
         <Button variant='contained' color='primary' onClick={handleExpenseSubmit}>Add</Button>
           </div>

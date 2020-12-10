@@ -40,17 +40,20 @@ const Dollar = (props) => {
           <h1 className="app-title">100 Pennies Make Cent$</h1>
       </div>
       <div>
-        <FormControl onSubmit={handleYearSubmit} className={classes.margin} variant="outlined">
+        <FormControl onSubmit={handleYearSubmit} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
           <OutlinedInput
             id="outlined-adornment-amount"
+            type='number'
+            name='years'
             value={year}
-            onChange={(e) => {
-              setYear(Number(e.target.value))
-            }}
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
             labelWidth={60}
+            onChange={(e) => {
+              setYear(Number(e.target.value))
+            }}           
           />
+          <Button variant='contained' color='primary' onClick={handleYearSubmit}>Submit</Button>
         </FormControl>
         {/* <form onSubmit={handleYearSubmit}>
           
