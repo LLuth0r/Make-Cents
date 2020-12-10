@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
 const AddExpense = (props) => {
 
   const useStyles = makeStyles(() => ({
@@ -21,7 +22,7 @@ const AddExpense = (props) => {
       },
     },
   }));
-  
+
   const [item, setItem] = useState('');
   const [cost, setCost] = useState('');
   const [expense, setExpense] = useState(false);
@@ -32,7 +33,7 @@ const AddExpense = (props) => {
     e.preventDefault();
     let data = {
       item,
-      expense_cost: cost,
+      expense_cost: Number(cost),
       expense,
     };
 

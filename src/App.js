@@ -12,20 +12,20 @@ import BudgetTable from './components/BudgetTable';
 
 function App() {
 
-  const [dollars, setDollars] = useState([]);
+  // const [dollars, setDollars] = useState([]);
   const [expenses, setExpenses] = useState([]);
   const [income, setIncome] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
 
 
-  useEffect(() => {
-    async function getDollars() {
-      let response = await axios.get(baseURL, config);
-      setDollars(response.data.records);
-      console.log(response);
-    }
-    getDollars();
-  }, [toggleFetch]);
+  // useEffect(() => {
+  //   async function getDollars() {
+  //     let response = await axios.get(baseURL, config);
+  //     setDollars(response.data.records);
+  //     console.log(response);
+  //   }
+  //   getDollars();
+  // }, [toggleFetch]);
 
   useEffect(() => {
     async function getBudget() {
@@ -36,14 +36,14 @@ function App() {
     getBudget();
   }, [toggleFetch]);
 
-  useEffect(() => {
-    async function getIncome() {
-      let incomeResp = await axios.get(incomeURL, config);
-      setIncome(incomeResp.data.records);
-      console.log(incomeResp);
-    }
-    getIncome();
-  }, [toggleFetch]);
+  // useEffect(() => {
+  //   async function getIncome() {
+  //     let incomeResp = await axios.get(incomeURL, config);
+  //     setIncome(incomeResp.data.records);
+  //     console.log(incomeResp);
+  //   }
+  //   getIncome();
+  // }, [toggleFetch]);
 
   return (
     <div className="App">

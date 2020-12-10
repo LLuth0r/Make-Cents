@@ -5,29 +5,26 @@ import { useState, useEffect } from 'react';
 
 const Chart = (props) => {
 
-  const [incomeArray, setIncomeArray] = useState(['income']);
-  const [expenseArray, setExpenseArray] = useState(['expense']);
+  const [incomeArray, setIncomeArray] = useState(['Income']);
+  const [expenseArray, setExpenseArray] = useState(['Expense']);
   const [c3Chart, setC3Chart] = useState({});
 
-  // console.log(incomeArray)
-  
   useEffect(() => {
-    props.expenses.forEach(expense => {
-      // console.log(expense.fields)
+    const sortedExpenses = props.expenses.reduce((acc,expense) => {
       
-      const arr1 = ['Income']
-      const arr2 = ['Expense']
-
       if (expense.fields.expense) {
-        arr2.push(expense.fields.expense_cost)
-        setExpenseArray(arr2)
+        acc.expense.push(expense.fields.expense_cost)
       } else {
-        arr1.push(expense.fields.expense_cost)
-        setIncomeArray(arr1)
+        acc.income.push(expense.fields.expense_cost)
       }
-    }
-      )
-},[props])
+      return acc
+    }, {
+      income: ['Income'],
+      expense:['Expense'],
+    })
+    setIncomeArray(sortedExpenses.income)
+    setExpenseArray(sortedExpenses.expense)
+  }, [props])
 
   useEffect(() => {
     console.log(props)
@@ -39,10 +36,19 @@ const Chart = (props) => {
         ],
         type: "donut",
       },
+      color: {
+        pattern:['#388E3C', '#D32F2F']
+      },
+      donut: {
+        label: {
+          format: function (value) {
+            return ('$'+ value.toFixed(2));
+          }
+        }
+      }
     }))
   }, [incomeArray, expenseArray]);
 
-  
   return <div id="chart" />;
 };
 
