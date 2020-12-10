@@ -19,8 +19,7 @@ export default function Home(props) {
           <Link to={`/Dollar/${props.dollars[0].id}`} >
               <img className="dollaricon" src="https://res.cloudinary.com/decd84s0g/image/upload/v1607574767/Make%20Cents/clipart773965.png" alt=''/>
           </Link>
-          <p className="dollarsdesc">If you saved just a dollar a day, how much would you save over the years?
-          You're never too old to start saving for your future.
+          <p className="dollarsdesc">If you started saving a dollar a day, how much would you have saved up by the time you retire at age 65?  
         </p>
           <h2 className='pennies'>100 Pennies Make Cent$</h2>
         </div>

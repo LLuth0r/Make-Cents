@@ -48,22 +48,22 @@ function App() {
   return (
     <div className="App">
 
-      <Route exact path='/'>
+      {/* <Route exact path='/'>
         <Home dollars={dollars}/>
-      </Route>      
+      </Route>       */}
 
-      <Route path='/Dollar/'>
+      {/* <Route path='/Dollar/'>
         <>
         {dollars.map((dollar) => 
           <Dollar dollar={dollar} />
           )}
         </>  
-      </Route>
+      </Route> */}
 
-      <Route path='/Budget/'>
+      <Route exact path='/'>
         <>
           <AddExpense expenses={expenses} setToggleFetch={setToggleFetch} />
-          {expenses.map((expense) => <BudgetTable expense={expense} />)}
+          {expenses.map((expense) => <BudgetTable expense={expense} setToggleFetch={setToggleFetch}/>)}
         </>                       
       </Route>
 

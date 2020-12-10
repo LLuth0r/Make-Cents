@@ -2,27 +2,18 @@ import React from "react";
 import c3 from "c3";
 import { useState, useEffect } from 'react';
 
-const DollarChart = (props) => {
+const DollarChart = () => {
   
-    const [dollarArray, setDollarArray] = useState([])
-    const [dollarChart, setDollarChart] = useState({});
-    const dollarsPerYear = 365;
-    const totalSaved = (dollarsPerYear * dollarArray);
-    
-
-    useEffect(() => {
-      // console.log(props.fields.number_of_years)
-    
-      if (props.dollar) {
-        setDollarChart(c3.generate({
+  const [dollarArray, setDollarArray] = useState([])
+  const [dollarChart, setDollarChart] = useState({});
+  
+  c3.generate({
           bindto: "#chart",
           data: {
-            columns: [[props.fields.number_of_years]],
+            columns: [365,730,1095, 1460,1825,2190,2555,2920,3285,3650],
             type: "line",
           },
-        }))
-      }
-  }, [props]);
+        });
   
   return <div id="chart" />;
 };

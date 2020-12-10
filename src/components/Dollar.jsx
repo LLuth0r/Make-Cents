@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import { OutlinedInput } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import TextField from '@material-ui/core/TextField';
 
 const Dollar = (props) => {
   
@@ -39,9 +39,12 @@ const Dollar = (props) => {
           </Link>
           <h1 className="app-title">100 Pennies Make Cent$</h1>
       </div>
+      <h4>A Dollar a Day Keeps Post-Retirement Work Away</h4>
+      <h5>See how just a dollar a day saved can add up over time.</h5>
       <div>
         <FormControl onSubmit={handleYearSubmit} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+          <TextField id="outlined-basic" label="Current Age" variant="outlined" value={year} onChange={(e) => {setYear(Number(e.target.value))}} />
+          {/* <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
           <OutlinedInput
             id="outlined-adornment-amount"
             type='number'
@@ -52,20 +55,9 @@ const Dollar = (props) => {
             onChange={(e) => {
               setYear(Number(e.target.value))
             }}           
-          />
+          /> */}
           <Button variant='contained' color='primary' onClick={handleYearSubmit}>Submit</Button>
         </FormControl>
-        {/* <form onSubmit={handleYearSubmit}>
-          
-              <input
-                type='number'
-                name='years'
-                value={year}
-                onChange={(e) => {
-                setYear( Number(e.target.value) )
-                }} />
-              <input type='submit' />
-            </form> */}
           </div>
          <DollarChart />
           <Button variant="outlined" color="primary">+ Year</Button>
