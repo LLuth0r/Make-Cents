@@ -7,6 +7,7 @@ import DollarChart from './DollarChart';
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const Dollar = (props) => {
   
@@ -46,8 +47,8 @@ const Dollar = (props) => {
             </form>
           </div>
          <DollarChart />
-          <button className='addYear'>+ Year</button>
-          <button className='minusYear'>- Year</button>
+          <Button variant="outlined" color="primary">+ Year</Button>
+          <Button variant="outlined" color="secondary">- Year</Button>
           <h3>Total $aved</h3>
   </div>
 )
