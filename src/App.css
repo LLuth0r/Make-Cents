@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
 .App {
   text-align: center;
 }
