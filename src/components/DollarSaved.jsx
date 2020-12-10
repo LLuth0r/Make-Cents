@@ -6,6 +6,8 @@ import axios from 'axios';
 import { withRouter } from 'react-router';
 import DollarChart from './DollarChart';
 import { Link } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class DollarSaved extends Component {
   constructor(props) {
@@ -62,19 +64,21 @@ class DollarSaved extends Component {
           </div>
           <div>
             <form onSubmit={this.handleSubmit}>
-              <input
+              <TextField
+                id="outlined-size-small"
+                size="small"
+                label="# of Years"
                 type='number'
-                name='years'
                 value={this.state.years}
                 onChange={(e) => {
                   this.setState({ years: Number(e.target.value) })
                 }} />
-              <input type='submit' />
+              <Button variant="contained" color="primary" type='submit' />
             </form>
           </div>
          <DollarChart />
-          <button className='addYear'>+ Year</button>
-          <button className='minusYear'>- Year</button>
+          <Button variant="outlined" color="primary">+ Year</Button>
+          <Button variant="outlined" color="primary">- Year</Button>
           <h3>Total $aved</h3>
         </div>
       );
