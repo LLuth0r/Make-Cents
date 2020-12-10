@@ -50,14 +50,6 @@ class DollarSaved extends Component {
     if (this.state.rendered === false) {
     }
   }
-
-    // console.log(this.state.saved);
-    // const data = parseInt(this.state.saved.number_of_years);
-    // console.log(data);
-    // // data.push(parseInt(this.state.saved.number_of_years));
-    // const dollarsPerYear = 365;
-    // const total = (data * dollarsPerYear);
-    // console.log(total);
   
     render() {
       return (

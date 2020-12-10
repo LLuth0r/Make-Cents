@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import { baseURL, budgetURL, incomeURL, config } from './services'
 import Home from './components/Home';
-import DollarSaved from './components/DollarSaved';
+import Dollar from './components/Dollar';
 import AddExpense from './components/AddExpense';
 import BudgetTable from './components/BudgetTable';
 
@@ -52,10 +52,12 @@ function App() {
         <Home dollars={dollars}/>
       </Route>      
 
-      <Route path='/DollarSaved/:id'>
-        {dollars.map((dollar) => {
-          return <DollarSaved dollars={dollars} setToggleFetch={setToggleFetch} />
-        })}        
+      <Route path='/Dollar/'>
+        <>
+        {dollars.map((dollar) => 
+          <Dollar dollar={dollar} />
+          )}
+        </>  
       </Route>
 
       <Route path='/Budget/'>
