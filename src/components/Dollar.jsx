@@ -8,6 +8,12 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { OutlinedInput } from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const Dollar = (props) => {
   
@@ -35,7 +41,20 @@ const Dollar = (props) => {
           <h1 className="app-title">100 Pennies Make Cent$</h1>
       </div>
       <div>
-            <form onSubmit={handleYearSubmit}>
+        <FormControl onSubmit={handleYearSubmit} className={classes.margin} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-amount"
+            value={year}
+            onChange={(e) => {
+              setYear(Number(e.target.value))
+            }}
+            startAdornment={<InputAdornment position="start">$</InputAdornment>}
+            labelWidth={60}
+          />
+        </FormControl>
+        {/* <form onSubmit={handleYearSubmit}>
+          
               <input
                 type='number'
                 name='years'
@@ -44,7 +63,7 @@ const Dollar = (props) => {
                 setYear( Number(e.target.value) )
                 }} />
               <input type='submit' />
-            </form>
+            </form> */}
           </div>
          <DollarChart />
           <Button variant="outlined" color="primary">+ Year</Button>
