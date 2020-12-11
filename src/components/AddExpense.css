@@ -5,6 +5,29 @@
   align-items: flex-end;
 }
 
+p.expense {
+  font-family: "Michroma", sans-serif;
+  font-size: 14px;
+}
+
+p.expense-cost {
+  grid-column-start: 2;
+  margin: 0;
+  font-family: "Michroma", sans-serif;
+  font-size: 14px;
+}
+
+h2.expense-type {
+  font-family: "Michroma", sans-serif;
+  font-size: 14px;
+}
+
+h2.expense-cost {
+  font-family: "Michroma", sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
 .MuiFormControl-root {
   margin-right: 10px;
 }
@@ -16,16 +39,12 @@
   margin-right: 10%;
   margin-top: 60px;
   margin-bottom: 20px;
+  font-family: "Michroma", sans-serif;
   font-size: 12px;
 }
 
 .expense-type {
   grid-column-start: 1;
-  margin: 0;
-}
-
-.expense-cost {
-  grid-column-start: 2;
   margin: 0;
 }
 
@@ -58,4 +77,38 @@
   grid-row-start: 1;
   width: 25px;
   justify-self: center;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  align-items: flex-end;
+  background-color: #78909c;
+}
+
+.gitLink {
+  color: #263238;
+  padding: 3px;
+}
+
+.linkedIn-link {
+  color: #263238;
+  padding-bottom: 3px;
+  padding-left: 10px;
+}
+
+.coding {
+  font-size: 14px;
+  align-self: flex-end;
+  font-family: "Gill Sans";
+  margin: 10px;
+}
+
+.MuiFormControl-root {
+  margin-right: 10px;
 }

@@ -37,7 +37,7 @@ const Chart = (props) => {
         type: "donut",
       },
       color: {
-        pattern:['#0E6655', '#922B21']
+        pattern:['#45B39D', '#EC7063']
       },
       donut: {
         label: {

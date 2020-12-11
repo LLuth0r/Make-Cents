@@ -28,7 +28,7 @@ const Dollar = (props) => {
     };
 
     await axios.post(baseURL, { fields: data }, config);
-    // props.setToggleFetch((prev) => !prev);
+
   };
 
   return (
@@ -44,18 +44,6 @@ const Dollar = (props) => {
       <div>
         <FormControl onSubmit={handleYearSubmit} variant="outlined">
           <TextField id="outlined-basic" label="Current Age" variant="outlined" value={year} onChange={(e) => {setYear(Number(e.target.value))}} />
-          {/* <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-amount"
-            type='number'
-            name='years'
-            value={year}
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            labelWidth={60}
-            onChange={(e) => {
-              setYear(Number(e.target.value))
-            }}           
-          /> */}
           <Button variant='contained' color='primary' onClick={handleYearSubmit}>Submit</Button>
         </FormControl>
           </div>

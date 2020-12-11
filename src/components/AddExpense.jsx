@@ -74,15 +74,15 @@ const AddExpense = (props) => {
             label="Expense?"
           />         
           
-        <Button className='delete-button' variant='contained' color='primary' onClick={handleExpenseSubmit}>Add</Button>
+        <Button className='add-button' variant='contained' color='secondary' onClick={handleExpenseSubmit}>Add</Button>
           </div>
       </form>
 
       <ExpenseChart expenses={props.expenses} />
 
       <div className='budget-headers'> 
-      <h2 className='expense-type'>Income/Expense Item</h2>
-        <h2 className='expense-cost'>$ Value</h2>
+      <h2 className='expense-type'>Income / Expense Item</h2>
+        <h2 className='expense-cost'>$ Amount</h2>
         </div>
     </div>
   )

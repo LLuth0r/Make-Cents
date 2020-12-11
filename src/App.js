@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import { budgetURL, config } from './services'
 import AddExpense from './components/AddExpense';
 import BudgetTable from './components/BudgetTable';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -25,15 +26,17 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div id="App">
+      <div id='content-wrap'> 
    
       <Route exact path='/'>
         <>
           <AddExpense expenses={expenses} setToggleFetch={setToggleFetch} />
-          {expenses.map((expense) => <BudgetTable expense={expense} setToggleFetch={setToggleFetch}/>)}
+          {expenses.map((expense) => <BudgetTable expense={expense} setToggleFetch={setToggleFetch} />)}
+          <Footer />
         </>                       
       </Route>
-     
+      </div>
     </div>
   );
 }
