@@ -83,11 +83,9 @@ Airtable is returning the data for this base as shown below:\
 
 #### MVP
 
-- Home page with clickable icons that route to each component feed
-- Get and post dollar per day years from Airtable
-- Increase/Decrease buttons for number of years saved
+- Use input fields to add income and expense items to Airtable
 - Get and post income and expenses from Airtable
-- Use input field and buttons to update budget
+- Display budget items from Airtable and filter to respective income/expense fields in chart
 - Dynamically rendered charts
 
 #### PostMVP
@@ -96,7 +94,15 @@ Airtable is returning the data for this base as shown below:\
 - API call for financial stock historic performance
 - Get and post year/month/day and amount invested
 - Get and post stock financial performance of stock based on inputs
-- Dynamically render chart
+- Dynamically render chart\
+
+** All items below were coded, but scrapped due to
+issues/timing to complete the project. Main focus became the Budget App**
+
+- Home page with clickable icons that route to each component feed
+- Get and post dollar per day years from Airtable
+- Increase/Decrease buttons for number of years saved
+- Use input field and buttons to update budget
 
 ---
 
@@ -105,11 +111,11 @@ Airtable is returning the data for this base as shown below:\
 | Day      | Deliverable                                        | Status     |
 | -------- | -------------------------------------------------- | ---------- |
 | Dec 3-4  | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
-| Dec 4    | Project Approval                                   | Incomplete |
-| Dec 5-6  | Component Creation / Get, Set, Delete Data         | Incomplete |
-| Dec 7    | Basic Styling / CSS Layouts                        | Incomplete |
-| Dec 8    | Dynamic Chart Integration                          | Incomplete |
-| Dec 9-10 | Advanced CSS / MVP                                 | Incomplete |
+| Dec 4    | Project Approval                                   | Complete   |
+| Dec 5-6  | Component Creation / Get, Set, Delete Data         | Complete   |
+| Dec 7    | Basic Styling / CSS Layouts                        | Complete   |
+| Dec 8    | Dynamic Chart Integration                          | Complete   |
+| Dec 9-10 | Advanced CSS / MVP                                 | Complete   |
 | Dec 11   | Presentations                                      | Incomplete |
 
 ---
@@ -118,24 +124,24 @@ Airtable is returning the data for this base as shown below:\
 
 | Component                 | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Proposal                  |    H     |      3hrs      |               |             |
-| Airtable Setup            |    H     |      2hrs      |               |             |
-| Homepage Setup            |    H     |      2hrs      |               |             |
-| Clickable Icons           |    H     |      2hrs      |               |             |
-| Navbar Setup              |    H     |      1hrs      |               |             |
-| Data population pg 1      |    H     |      3hrs      |               |             |
-| Data population pg 2      |    H     |      3hrs      |               |             |
-| Input Creation pg 1       |    H     |      3hrs      |               |             |
-| Input Creation pg 2       |    H     |      3hrs      |               |             |
-| Data Creation/Update pg 1 |    H     |      3hrs      |               |             |
-| Data Creation/Update pg 2 |    H     |      3hrs      |               |             |
-| Data Deletion pg 2        |    H     |      2hrs      |               |             |
-| Graph Integration pg 1    |    H     |      4hrs      |               |             |
-| Graph Integration pg 2    |    H     |      4hrs      |               |             |
-| Component CSS pg 1        |    H     |      3hrs      |               |             |
-| Component CSS pg 2        |    H     |      3hrs      |               |             |
-| Component CSS pg 3        |    H     |      3hrs      |               |             |
-| Total                     |    H     |     47hrs      |               |             |
+| Proposal                  |    H     |      3hrs      |      2.5      |     2.5     |
+| Airtable Setup            |    H     |      2hrs      |       1       |      1      |
+| Homepage Setup            |    H     |      2hrs      |       2       |      2      |
+| Clickable Icons           |    H     |      2hrs      |      .5       |     .5      |
+| Navbar Setup              |    H     |      1hrs      |       1       |      2      |
+| Data population pg 1      |    H     |      3hrs      |       2       |      3      |
+| Data population pg 2      |    H     |      3hrs      |       2       |      2      |
+| Input Creation pg 1       |    H     |      3hrs      |       2       |      2      |
+| Input Creation pg 2       |    H     |      3hrs      |       2       |      2      |
+| Data Creation/Update pg 1 |    H     |      3hrs      |       5       |      5      |
+| Data Creation/Update pg 2 |    H     |      3hrs      |       5       |      5      |
+| Data Deletion pg 2        |    H     |      2hrs      |       2       |      2      |
+| Graph Integration pg 1    |    H     |      4hrs      |       4       |      4      |
+| Graph Integration pg 2    |    H     |      4hrs      |       2       |      2      |
+| Component CSS pg 1        |    H     |      3hrs      |       5       |      5      |
+| Component CSS pg 2        |    H     |      3hrs      |       3       |      3      |
+| Component CSS pg 3        |    H     |      3hrs      |       3       |      3      |
+| Total                     |    H     |     47hrs      |      44       |     44      |
 
 ---
 
